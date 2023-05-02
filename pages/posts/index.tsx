@@ -21,14 +21,14 @@ export default function Posts(props) {
             <Head>
                 <title>Posts : Nextjs</title>
             </Head>
-            <div className='section'>
+            <div className="section">
                 <Link href="/" className='btn-backTo'>Back to home</Link>
                 <h1 className="text-3xl font-bold text-white mb-8">
-                    All Posts ':)'
+                    All Posts
                 </h1>
                 {props.posts.map( item => (
                     <div key={item.id}>
-                        <h2 className='text-base font-light text-white text-left'>
+                        <h2 className="text-base font-light text-white text-left">
                             The Title of the post is : 
                             <Link href={`/posts/${item.id}`} className="font-medium text-lime-600">{item.title}</Link> 
                         </h2>

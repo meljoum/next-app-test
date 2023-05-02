@@ -51,14 +51,14 @@ export default function Article(props) {
             <Head>
                 <title>Posts : Nextjs</title>
             </Head>
-            <div className='section'>
-                <Link href="/" className='btn-backTo'>Back to home</Link>
+            <div className="section">
+                <Link href="/" className="btn-backTo">Back to home</Link>
                 <h1 className="text-3xl font-bold text-white mb-8">
-                    My Article ':)'
+                    My Article
                 </h1>
                 <div>
-                    <h2 className='text-base font-medium text-white text-left mb-2'>{props.posts.title}</h2><br/>
-                    <p className='text-sm font-light text-white text-left'>{props.posts.body}</p>
+                    <h2 className="text-base font-medium text-white text-left mb-2">{props.posts.title}</h2><br/>
+                    <p className="text-sm font-light text-white text-left">{props.posts.body}</p>
                 </div>
             </div>
            
