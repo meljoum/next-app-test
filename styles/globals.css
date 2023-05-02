@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+.section {
+  position: relative;
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+h1.titlePage {
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+}
+.btn-backTo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: 1px solid white;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+.btn-backTo:hover {
+  background-color: white;
+  color: black;
+  transition: .25s all ease-in-out;
+}
+.btn-goTo {
+  border: 1px solid white;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin: 2em auto;
+}
+.btn-goTo:hover {
+  background-color: white;
+  color: black;
+  transition: .25s all ease-in-out;
+}
+nav {
+  display: flex;
+  gap: 1em;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+nav > a {
+  color: black;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+}
+nav > a:hover {
+  color: aqua;
+  transition: .25s all ease-in-out;
+}
+.footer {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a:hover {
+  opacity: .8;
+  transition: .25s all ease-in-out;
+}
