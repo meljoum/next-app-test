@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react';
 
 const URLPosts = "https://jsonplaceholder.typicode.com/posts?_limit=10";
 
@@ -23,7 +22,7 @@ export default function Posts(props) {
                 <title>Posts : Nextjs</title>
             </Head>
             <div className='section'>
-                <a href="/" className='btn-backTo'>Back to home</a>
+                <Link href="/" className='btn-backTo'>Back to home</Link>
                 <h1 className="text-3xl font-bold text-white mb-8">
                     All Posts ':)'
                 </h1>

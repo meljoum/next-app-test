@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 
 // export async function getServerSideProps(context) {
@@ -51,7 +52,7 @@ export default function Article(props) {
                 <title>Posts : Nextjs</title>
             </Head>
             <div className='section'>
-                <a href="/" className='btn-backTo'>Back to home</a>
+                <Link href="/" className='btn-backTo'>Back to home</Link>
                 <h1 className="text-3xl font-bold text-white mb-8">
                     My Article ':)'
                 </h1>

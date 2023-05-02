@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function About() {
     const [id, setId] = useState(null);
@@ -32,7 +33,7 @@ export default function About() {
                 <title>About : Nextjs</title>
             </Head>
             <div className='section'>
-                <a href="/" className='btn-backTo'>Back to home</a>
+                <Link href="/" className='btn-backTo'>Back to home</Link>
                 <h1 className="text-3xl font-bold text-white">
                     Hello, Next.js!
                 </h1>
