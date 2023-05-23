@@ -5,6 +5,8 @@ import axios from 'axios';
 
 export default function TestHooksRequest() {
 
+    
+
     const [count, setCount] = useState(0);
 
     const handleIncrement = () => {
@@ -32,6 +34,16 @@ export default function TestHooksRequest() {
     //------------------------------------------
     const [post, setPost] = useState({});
     const [id, setId] = useState(0);
+
+    // type Post = {
+    //     id?: number;
+    //     title?: string;
+    // };
+
+    // const obj: Post = {
+    //     id: 1,
+    //     title: ''
+    // };
 
     useEffect(() => {
         axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`).then((res) => {

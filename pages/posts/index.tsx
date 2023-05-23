@@ -1,12 +1,21 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import axios from 'axios';
 
-const URLPosts = "https://jsonplaceholder.typicode.com/posts?_limit=10";
+const URLPosts = "https://jsonplaceholder.typicode.com/posts?_limit=20";
 
 export async function getStaticProps() {
-    const res = await fetch(URLPosts);
-    const data = await res.json();
+
+    // Methode Fetch
+    /* const res = await fetch(URLPosts);
+    const data = await res.json(); */
+
+    // Methode with axios
+    const res = await axios.get(URLPosts);
+    const data = await res.data;
+
     // console.log("the posts is :", data)
+
     return {
         props: {
             posts : data

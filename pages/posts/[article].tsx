@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-
+import axios from 'axios';
 
 // export async function getServerSideProps(context) {
 //     const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.article}`); // .article it's from name of pages [article].tsx
@@ -17,8 +17,11 @@ import Link from 'next/link';
 // getServerSideProps she's rendering plusieur request or we use both function getStaticPath and getStaticProps
 
 export async function getStaticPaths() {
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=10");
-    const data = await res.json(); 
+    // const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=20");
+    // const data = await res.json(); 
+
+    const axiosData = await axios.get("https://jsonplaceholder.typicode.com/posts?_limit=20");
+    const data = await axiosData.data;
 
     const paths = data.map(d => {
         return {
@@ -33,8 +36,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.article}`); // .article it's from name of pages [article].tsx
-    const data = await res.json();
+    // const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.article}`); // .article it's from name of pages [article].tsx
+    // const data = await res.json();
+
+    const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${context.params.article}`);
+    const data = await res.data;
 
     return {
         props: {
