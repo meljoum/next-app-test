@@ -32,7 +32,7 @@ export default function TestHooksRequest() {
     // }, [])
 
     //------------------------------------------
-    const [post, setPost] = useState({});
+    const [post, setPost] = useState<Record<string, any>>({}) ;
     const [id, setId] = useState(0);
 
     // type Post = {

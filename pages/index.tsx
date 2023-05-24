@@ -8,6 +8,9 @@ export default function HomePage() {
   const URLAdvice = 'https://api.adviceslip.com/advice';
   
   const [text, setText] = useState(null);
+
+  // get data with fetch
+
   // const URLAdviceasync = async () => {
   //   const resultAdvice = await fetch(URLAdvice);
   //   const res = await resultAdvice.json();
@@ -15,6 +18,8 @@ export default function HomePage() {
 
   //   setText(res?.slip?.advice || 'No Advice for YOU :(');
   // }
+
+  // Get data with axios
 
   const AxiosAdviceAsync = async () => {
     const resultAxiosData = await axios.get(URLAdvice);
@@ -25,8 +30,25 @@ export default function HomePage() {
     setText(res?.slip?.advice || 'No Advice for YOU !!!');
   }
 
+  // Post data
+
+  const AxiosPostData = async () => {
+    try {
+      const url = 'https://jsonplaceholder.typicode.com/posts';
+      const data = { userId: '2', title: 'Mehdi', body: 'Post2@gmail.com' };
+
+      const response = await axios.post(url, data);
+
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   // URLAdviceasync();
   // AxiosAdviceAsync();
+
+  AxiosPostData();
   return ( 
     <>
       <Head>
