@@ -31,10 +31,16 @@ export default function TestHooksRequest() {
 
     // }, [])
 
+
+
     //------------------------------------------
     const [post, setPost] = useState<Record<string, any>>({}) ;
     const [id, setId] = useState(0);
 
+    // interface Person {
+    //     id: string;
+    //     title: number;
+    //   }
     // type Post = {
     //     id?: number;
     //     title?: string;
@@ -69,7 +75,7 @@ export default function TestHooksRequest() {
                 )}
             </div> */}
 
-            <input type="text" value={id} onChange={handleChange} />
+            <input type="text" onChange={handleChange} />
             <p className={Style.textAdvice}>{post.id} - {post.title}</p>
         </div>
     );

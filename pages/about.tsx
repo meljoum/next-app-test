@@ -47,12 +47,13 @@ export default function About() {
         const ob = obj.firstname;
         console.log(ob);
 
-        obj.middlename = "Vikings"; // add value in object
-        obj["country"] = "Morocco"; // same add value in object
-        console.log(obj);
+        
+        // obj.middlename = "Vikings"; // add value in object
+        // obj["country"] = "Morocco"; // same add value in object
+        // console.log(obj);
 
-        delete obj.middlename; // delete value of object
-        console.log(obj);
+        // delete obj.middlename; // delete value of object
+        // console.log(obj);
 
         const objlength = Object.keys(obj).length;
         console.log("the lenght of object : ", objlength)
