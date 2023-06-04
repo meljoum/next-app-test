@@ -72,6 +72,7 @@ export default function HomePage() {
           <button className={style.btnAdvice} onClick={AxiosAdviceAsync}>Random Advice</button>
           <p className={style.textAdvice}>The Random Advice is : {text && text}</p>
       </div>
+      <h3>Test Hook useContext :</h3>
       <Sidebar />
       <Widget />
     </ProductContext.Provider>
