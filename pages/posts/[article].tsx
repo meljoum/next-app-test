@@ -23,7 +23,7 @@ export async function getStaticPaths() {
     const axiosData = await axios.get("https://jsonplaceholder.typicode.com/posts?_limit=20");
     const data = await axiosData.data;
 
-    const paths = data.map(d => {
+    const paths = data.map(d => {   // we maping on the Id's
         return {
             params: {article: `${d.id}`}
         }

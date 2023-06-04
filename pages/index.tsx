@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import Head from 'next/head';
 import style from '@/styles/Home.module.css';
 import axios from 'axios';
+import Sidebar from "@/components/testContext/Sidebar";
+import Widget from "@/components/testContext/Widget";
+
+const defaultValue = '';
+export const ProductContext = createContext(defaultValue);
 
 export default function HomePage() {
 
@@ -49,8 +54,16 @@ export default function HomePage() {
   // AxiosAdviceAsync();
 
   AxiosPostData();
+
+
+  //Provider context
+  interface Product {
+    Product: string;
+  }
+
+  const [product, setProduct] = useState<string>('Labtop props');
   return ( 
-    <>
+    <ProductContext.Provider value={product}>
       <Head>
         <title>Home Page : Nextjs</title>
       </Head>
@@ -59,6 +72,8 @@ export default function HomePage() {
           <button className={style.btnAdvice} onClick={AxiosAdviceAsync}>Random Advice</button>
           <p className={style.textAdvice}>The Random Advice is : {text && text}</p>
       </div>
-    </>
+      <Sidebar />
+      <Widget />
+    </ProductContext.Provider>
   );
 }
